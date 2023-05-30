@@ -12,7 +12,7 @@ class editProfilePage extends StatefulWidget {
 
 class _editProfilePageState extends State<editProfilePage> {
   File? pickedImage;
-
+  var _mediaQuery;
   void _change() {
     Get.bottomSheet(
       SingleChildScrollView(
@@ -23,7 +23,7 @@ class _editProfilePageState extends State<editProfilePage> {
           ),
           child: Container(
             color: Colors.grey.shade200,
-            height: 250,
+            height: _mediaQuery.size.height * .32,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -87,7 +87,7 @@ class _editProfilePageState extends State<editProfilePage> {
           ),
           child: Container(
             color: Colors.grey.shade200,
-            height: 250,
+            height: _mediaQuery.size.height * .3,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -188,6 +188,7 @@ class _editProfilePageState extends State<editProfilePage> {
 
   @override
   Widget build(BuildContext context) {
+    _mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
@@ -215,14 +216,14 @@ class _editProfilePageState extends State<editProfilePage> {
                   child: pickedImage != null
                       ? Image.file(
                           pickedImage!,
-                          width: 170,
-                          height: 170,
+                          width: _mediaQuery.size.width * .38,
+                          height: _mediaQuery.size.height * .18,
                           fit: BoxFit.cover,
                         )
                       : Image.asset(
                           'assets/images/Me.jpg',
-                          width: 150,
-                          height: 150,
+                          width: _mediaQuery.size.width * .38,
+                          height: _mediaQuery.size.height * .18,
                           fit: BoxFit.cover,
                         ),
                 ),

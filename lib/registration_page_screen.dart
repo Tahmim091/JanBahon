@@ -31,6 +31,7 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
     Navigator.of(ctx).pushNamed('loginpage', arguments: {});
   }
 
+  var _mediaQuery;
   void _imagePickerOption() {
     Get.bottomSheet(
       SingleChildScrollView(
@@ -41,7 +42,7 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
           ),
           child: Container(
             color: Colors.grey.shade200,
-            height: 250,
+            height: _mediaQuery.size.height * .28,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -142,6 +143,7 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
 
   @override
   Widget build(BuildContext context) {
+    _mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
@@ -178,14 +180,14 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
                       child: pickedImage != null
                           ? Image.file(
                               pickedImage!,
-                              width: 170,
-                              height: 170,
+                              width: _mediaQuery.size.width * .42,
+                              height: _mediaQuery.size.height * .2,
                               fit: BoxFit.cover,
                             )
                           : Image.asset(
                               'assets/images/man.png',
-                              width: 170,
-                              height: 170,
+                              width: _mediaQuery.size.width * .42,
+                              height: _mediaQuery.size.height * .2,
                               fit: BoxFit.cover,
                             ),
                     ),
@@ -193,12 +195,26 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
                   Positioned(
                     bottom: 0,
                     right: 5,
-                    child: IconButton(
-                      onPressed: _imagePickerOption,
-                      icon: const Icon(
-                        Icons.add_a_photo_outlined,
+                    child: Container(
+                      height: 38,
+                      width: 38,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
                         color: Colors.black,
-                        size: 30,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 2,
+                        ),
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          _imagePickerOption();
+                        },
+                        icon: const Icon(
+                          Icons.camera_alt_outlined,
+                          size: 20,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   )

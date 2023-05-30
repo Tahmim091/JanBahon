@@ -2,21 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class carCard extends StatefulWidget {
-  const carCard({super.key});
+class editCarCard extends StatefulWidget {
+  const editCarCard({super.key});
 
   @override
-  State<carCard> createState() => _carCardState();
+  State<editCarCard> createState() => _editCarCardState();
 }
 
 // ignore: camel_case_types
-class _carCardState extends State<carCard> {
+class _editCarCardState extends State<editCarCard> {
   @override
   Widget build(BuildContext context) {
     var value1 = false;
     var _mediaQuery = MediaQuery.of(context);
     return Container(
-      height: _mediaQuery.size.height * .13,
+      height: _mediaQuery.size.height * .15,
       width: _mediaQuery.size.width * .22,
       child: Card(
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -28,7 +28,7 @@ class _carCardState extends State<carCard> {
         child: Column(
           children: [
             Container(
-              height: _mediaQuery.size.height * .13,
+              height: _mediaQuery.size.height * .12,
               width: _mediaQuery.size.width * 1,
               child: Image.asset(
                 'assets/images/car.jpg',
@@ -55,33 +55,24 @@ class _carCardState extends State<carCard> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 5, top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Service Status:',
-                    style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .7,
-                        ),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 50,
+                    vertical: 7,
                   ),
-                  SizedBox(
-                    height: 30.0,
-                    width: 60.0,
-                    child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: CupertinoSwitch(
-                        value: value1,
-                        onChanged: (val) {
-                          setState(() {
-                            value1 = val;
-                          });
-                        },
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.grey.shade200,
+                ),
+                child: Text(
+                  'Delete',
+                  style: Theme.of(context).textTheme.titleLarge?.apply(
+                        color: Colors.grey.shade200,
+                        fontSizeFactor: .7,
                       ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ],
