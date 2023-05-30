@@ -6,6 +6,10 @@ import './widgets/friend_request_list.dart';
 class friendListScreen extends StatelessWidget {
   const friendListScreen({super.key});
 
+  void profileView(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed('profileView', arguments: {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -68,8 +72,13 @@ class friendListScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            friendRequest(),
-            findFriend(),
+            GestureDetector(
+              child: friendRequest(),
+              onTap: () {
+                profileView;
+              },
+            ),
+            const findFriend(),
           ]),
         ),
       ),

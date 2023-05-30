@@ -1,39 +1,17 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:janbahon_v2/widgets/menu_drawer.dart';
-import 'package:janbahon_v2/widgets/profile_add_car_Service.dart';
 import 'package:janbahon_v2/widgets/profile_car_card_widget.dart';
-import 'package:janbahon_v2/widgets/profile_friend_card_widget.dart';
 
 // ignore: camel_case_types
-class profilePageScreen extends StatefulWidget {
-  const profilePageScreen({super.key});
+class profileViewScreen extends StatefulWidget {
+  const profileViewScreen({super.key});
 
   @override
-  State<profilePageScreen> createState() => _profilePageScreenState();
+  State<profileViewScreen> createState() => _profileViewScreenState();
 }
 
 // ignore: camel_case_types
-class _profilePageScreenState extends State<profilePageScreen> {
+class _profileViewScreenState extends State<profileViewScreen> {
   GlobalKey<ScaffoldState> scaffolKey = GlobalKey<ScaffoldState>();
-
-  void friendList(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('friendList', arguments: {});
-  }
-
-  void editVehicle(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('editVehicle', arguments: {});
-  }
-
-  void addVehicle(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('addVehicle', arguments: {});
-  }
-
-  void profileView(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('profileView', arguments: {});
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,22 +20,17 @@ class _profilePageScreenState extends State<profilePageScreen> {
       child: Scaffold(
         key: scaffolKey,
         backgroundColor: Colors.grey.shade200,
+        appBar: AppBar(
+          backgroundColor: Colors.grey.shade200,
+          iconTheme: const IconThemeData(
+            color: Colors.black,
+          ),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: IconButton(
-                      onPressed: () {
-                        scaffolKey.currentState?.openEndDrawer();
-                      },
-                      icon: Icon(Icons.menu_rounded),
-                    ),
-                  ),
-                ],
+              const SizedBox(
+                height: 30,
               ),
               Center(
                 child: ClipRRect(
@@ -90,62 +63,51 @@ class _profilePageScreenState extends State<profilePageScreen> {
                     ),
               ),
               const SizedBox(
-                height: 10,
+                height: 15,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                      child: Divider(
-                    thickness: 10,
-                    color: Colors.grey.shade300,
-                  )),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Friends',
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 10,
+                      ),
+                      backgroundColor: Colors.black,
+                      foregroundColor: Colors.grey.shade200,
+                    ),
+                    child: Text(
+                      'Confirm',
                       style: Theme.of(context).textTheme.titleLarge?.apply(
-                            fontSizeFactor: .8,
-                            color: Colors.grey.shade800,
+                            color: Colors.grey.shade200,
+                            fontSizeFactor: .7,
                           ),
                     ),
-                    TextButton.icon(
-                      onPressed: () {
-                        friendList(context);
-                      },
-                      icon: const Icon(
-                        Icons.list,
-                        color: Colors.blue,
-                      ),
-                      label: Text(
-                        'See in list',
-                        style: Theme.of(context).textTheme.titleMedium?.apply(
-                              fontSizeFactor: .8,
-                              color: Colors.blue,
-                            ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Center(
-                child: Container(
-                  height: _mediaQuery.size.height * .18,
-                  child: GridView.count(
-                    scrollDirection: Axis.horizontal,
-                    crossAxisCount: 1,
-                    children: [
-                      friendCard(),
-                      friendCard(),
-                      friendCard(),
-                      friendCard(),
-                    ],
                   ),
-                ),
+                  const SizedBox(
+                    width: 6,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 10,
+                      ),
+                      backgroundColor: Colors.red.shade700,
+                      foregroundColor: Colors.grey.shade200,
+                    ),
+                    child: Text(
+                      'Delete',
+                      style: Theme.of(context).textTheme.titleLarge?.apply(
+                            color: Colors.grey.shade200,
+                            fontSizeFactor: .7,
+                          ),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 10,
@@ -172,9 +134,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
                           ),
                     ),
                     TextButton.icon(
-                      onPressed: () {
-                        editVehicle(context);
-                      },
+                      onPressed: () {},
                       icon: const Icon(
                         Icons.edit,
                         color: Colors.blue,
@@ -192,22 +152,17 @@ class _profilePageScreenState extends State<profilePageScreen> {
               ),
               Center(
                 child: Container(
-                  height: _mediaQuery.size.width * 1.5,
+                  height: _mediaQuery.size.height * .5,
                   child: GridView.count(
                     shrinkWrap: true,
-                    physics: ScrollPhysics(),
+                    physics: const ScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     crossAxisCount: 2,
-                    children: [
+                    children: const [
                       carCard(),
                       carCard(),
                       carCard(),
                       carCard(),
-                      GestureDetector(
-                          onTap: () {
-                            addVehicle(context);
-                          },
-                          child: addCarCard()),
                     ],
                   ),
                 ),
@@ -215,19 +170,9 @@ class _profilePageScreenState extends State<profilePageScreen> {
               const SizedBox(
                 height: 10,
               ),
-              Row(
-                children: [
-                  Expanded(
-                      child: Divider(
-                    thickness: 10,
-                    color: Colors.grey.shade400,
-                  )),
-                ],
-              ),
             ],
           ),
         ),
-        endDrawer: menuDrawer(),
       ),
     );
   }

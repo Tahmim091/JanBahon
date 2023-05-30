@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    var _mediaQuery = MediaQuery.of(context);
     return AnimatedSplashScreen(
       splash: Center(
         child: SizedBox(
@@ -20,7 +20,7 @@ class SplashScreen extends StatelessWidget {
       ),
       backgroundColor: Colors.black,
       nextScreen: LoginPageScreen(),
-      splashIconSize: size.height * 0.3,
+      splashIconSize: _mediaQuery.size.height * 0.3,
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.bottomToTop,
       animationDuration: const Duration(seconds: 2),

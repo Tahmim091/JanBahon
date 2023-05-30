@@ -18,7 +18,7 @@ class LoginPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final _mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: SafeArea(
@@ -30,8 +30,8 @@ class LoginPageScreen extends StatelessWidget {
                 const SizedBox(height: 5),
                 Image.asset(
                   'assets/images/janbahonWhite.png',
-                  height: 180,
-                  width: 180,
+                  height: _mediaQuery.size.height * .24,
+                  width: _mediaQuery.size.width * .42,
                 ),
 
                 //login

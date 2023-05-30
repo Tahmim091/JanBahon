@@ -12,9 +12,10 @@ class _addCarCardState extends State<addCarCard> {
   @override
   Widget build(BuildContext context) {
     var value1 = false;
+    var _mediaQuery = MediaQuery.of(context);
     return Container(
-      height: 200,
-      width: 200,
+      height: _mediaQuery.size.height * .13,
+      width: _mediaQuery.size.width * .22,
       child: Card(
         clipBehavior: Clip.antiAliasWithSaveLayer,
         shape: RoundedRectangleBorder(
