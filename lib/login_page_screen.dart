@@ -116,10 +116,12 @@ class LoginPageScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    )
+                    ),
+
                     //signup end
                   ],
-                )
+                ),
+                const SizedBox(height: 30),
               ],
             ),
           ),

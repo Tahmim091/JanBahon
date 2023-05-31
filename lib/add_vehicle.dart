@@ -30,7 +30,7 @@ class _addVehicleState extends State<addVehicle> {
           ),
           child: Container(
             color: Colors.grey.shade200,
-            height: _mediaQuery.size.height * .3,
+            height: _mediaQuery.size.height * .32,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -48,60 +48,75 @@ class _addVehicleState extends State<addVehicle> {
                   const SizedBox(
                     height: 10,
                   ),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.grey.shade200,
-                    ),
-                    onPressed: () {
-                      _pickImage(ImageSource.camera);
-                    },
-                    icon: const Icon(Icons.camera),
-                    label: const Text(
-                      "CAMERA",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
+                  SizedBox(
+                    height: _mediaQuery.size.height * .05,
+                    width: _mediaQuery.size.width * .02,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        foregroundColor: Colors.grey.shade200,
                       ),
-                    ),
-                  ),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.grey.shade200,
-                    ),
-                    onPressed: () {
-                      _pickImage(ImageSource.gallery);
-                    },
-                    icon: const Icon(Icons.image),
-                    label: const Text(
-                      "GALLERY",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
+                      onPressed: () {
+                        _pickImage(ImageSource.camera);
+                      },
+                      icon: const Icon(Icons.camera),
+                      label: const Text(
+                        "CAMERA",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Quicksand',
+                        ),
                       ),
                     ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 177, 22, 11),
-                      foregroundColor: Colors.grey.shade100,
+                  SizedBox(
+                    height: _mediaQuery.size.height * .05,
+                    width: _mediaQuery.size.width * .02,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        foregroundColor: Colors.grey.shade200,
+                      ),
+                      onPressed: () {
+                        _pickImage(ImageSource.gallery);
+                      },
+                      icon: const Icon(Icons.image),
+                      label: const Text(
+                        "GALLERY",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Quicksand',
+                        ),
+                      ),
                     ),
-                    onPressed: () {
-                      Get.back();
-                    },
-                    icon: const Icon(Icons.close),
-                    label: const Text(
-                      "CANCEL",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: _mediaQuery.size.height * .05,
+                    width: _mediaQuery.size.width * .02,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 177, 22, 11),
+                        foregroundColor: Colors.grey.shade100,
+                      ),
+                      onPressed: () {
+                        Get.back();
+                      },
+                      icon: const Icon(Icons.close),
+                      label: const Text(
+                        "CANCEL",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Quicksand',
+                        ),
                       ),
                     ),
                   ),
@@ -169,13 +184,13 @@ class _addVehicleState extends State<addVehicle> {
                             ? Image.file(
                                 pickedImage!,
                                 width: _mediaQuery.size.width * .44,
-                                height: _mediaQuery.size.height * .20,
+                                height: _mediaQuery.size.width * .44,
                                 fit: BoxFit.cover,
                               )
                             : Image.asset(
                                 'assets/images/carIcon.png',
                                 width: _mediaQuery.size.width * .44,
-                                height: _mediaQuery.size.height * .20,
+                                height: _mediaQuery.size.width * .44,
                                 fit: BoxFit.cover,
                               ),
                       ),

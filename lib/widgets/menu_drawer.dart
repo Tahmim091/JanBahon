@@ -21,7 +21,9 @@ class menuDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _mediaQuery = MediaQuery.of(context);
     return Drawer(
+      width: _mediaQuery.size.width * .8,
       child: Container(
         color: Colors.grey.shade200,
         child: ListView(

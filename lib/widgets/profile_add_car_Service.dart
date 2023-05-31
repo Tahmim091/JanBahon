@@ -30,7 +30,7 @@ class _addCarCardState extends State<addCarCard> {
             ),
             const Icon(
               Icons.add_circle_rounded,
-              size: 80,
+              size: 70,
               color: Colors.grey,
             ),
             Text(
