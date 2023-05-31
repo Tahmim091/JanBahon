@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +12,9 @@ class carCard extends StatefulWidget {
 
 // ignore: camel_case_types
 class _carCardState extends State<carCard> {
+  var value1 = false;
   @override
   Widget build(BuildContext context) {
-    var value1 = false;
     var _mediaQuery = MediaQuery.of(context);
     return Container(
       height: _mediaQuery.size.height * .13,
@@ -40,16 +41,18 @@ class _carCardState extends State<carCard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  AutoSizeText(
                     'Toyota Premio',
+                    maxLines: 1,
                     style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .7,
+                          fontSizeFactor: .2,
                         ),
                   ),
-                  Text(
+                  AutoSizeText(
                     'MX2104',
+                    maxLines: 1,
                     style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .7,
+                          fontSizeFactor: .2,
                         ),
                   ),
                 ],
@@ -60,15 +63,16 @@ class _carCardState extends State<carCard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Service Status:',
+                  AutoSizeText(
+                    'Sevice Status: ',
+                    maxLines: 1,
                     style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .7,
+                          fontSizeFactor: .2,
                         ),
                   ),
                   SizedBox(
-                    height: 30.0,
-                    width: 60.0,
+                    height: _mediaQuery.size.height * .04,
+                    width: _mediaQuery.size.height * .06,
                     child: FittedBox(
                       fit: BoxFit.contain,
                       child: CupertinoSwitch(

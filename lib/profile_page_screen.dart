@@ -65,7 +65,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
                   child: Image.asset(
                     'assets/images/Me.jpg',
                     width: _mediaQuery.size.width * .38,
-                    height: _mediaQuery.size.height * .18,
+                    height: _mediaQuery.size.width * .38,
                     fit: BoxFit.cover,
                   ),
                 ),

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
 
@@ -31,7 +32,7 @@ class friendCard extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: _mediaQuery.size.height * .12,
+                height: _mediaQuery.size.height * .10,
                 width: _mediaQuery.size.height * .18,
                 child: Image.asset(
                   'assets/images/Amit.jpg',
@@ -41,9 +42,10 @@ class friendCard extends StatelessWidget {
               const SizedBox(
                 height: 4,
               ),
-              Text(
+              AutoSizeText(
                 'Amit Hassan',
-                style: Theme.of(context).textTheme.titleMedium?.apply(
+                maxLines: 1,
+                style: Theme.of(context).textTheme.titleLarge?.apply(
                       fontSizeFactor: .7,
                     ),
               ),

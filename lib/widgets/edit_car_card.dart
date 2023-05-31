@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -40,37 +41,41 @@ class _editCarCardState extends State<editCarCard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  AutoSizeText(
                     'Toyota Premio',
+                    maxLines: 1,
                     style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .7,
+                          fontSizeFactor: .2,
                         ),
                   ),
-                  Text(
+                  AutoSizeText(
                     'MX2104',
+                    maxLines: 1,
                     style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .7,
+                          fontSizeFactor: .2,
                         ),
                   ),
                 ],
               ),
             ),
-            Center(
+            const SizedBox(
+              height: 5,
+            ),
+            Container(
+              height: _mediaQuery.size.height * .05,
+              width: _mediaQuery.size.width * .35,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 7,
-                  ),
                   backgroundColor: Colors.black,
                   foregroundColor: Colors.grey.shade200,
                 ),
-                child: Text(
+                child: AutoSizeText(
                   'Delete',
+                  maxLines: 1,
                   style: Theme.of(context).textTheme.titleLarge?.apply(
-                        color: Colors.grey.shade200,
-                        fontSizeFactor: .7,
+                        fontSizeFactor: .2,
+                        color: Colors.white,
                       ),
                 ),
               ),

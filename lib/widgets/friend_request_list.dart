@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class friendRequest extends StatelessWidget {
   const friendRequest({
@@ -11,6 +12,7 @@ class friendRequest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _mediaQuery = MediaQuery.of(context);
     return GestureDetector(
       onTap: () {
         profileView(context);
@@ -32,8 +34,9 @@ class friendRequest extends StatelessWidget {
           ),
           title: Padding(
             padding: const EdgeInsets.only(bottom: 8),
-            child: Text(
+            child: AutoSizeText(
               'Tahmim Jawad',
+              maxLines: 1,
               style: Theme.of(context).textTheme.titleLarge?.apply(
                     fontSizeFactor: .8,
                   ),
@@ -42,11 +45,14 @@ class friendRequest extends StatelessWidget {
           subtitle: Row(
             children: [
               SizedBox(
-                height: 30,
-                width: 100,
+                height: _mediaQuery.size.width * .08,
+                width: _mediaQuery.size.width * .24,
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text('Confirm'),
+                  child: AutoSizeText(
+                    'Confirm',
+                    maxLines: 1,
+                  ),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
                   ),
@@ -56,8 +62,8 @@ class friendRequest extends StatelessWidget {
                 width: 10,
               ),
               SizedBox(
-                height: 30,
-                width: 100,
+                height: _mediaQuery.size.width * .08,
+                width: _mediaQuery.size.width * .24,
                 child: ElevatedButton(
                   onPressed: () {},
                   child: Text('Delete'),
@@ -68,12 +74,13 @@ class friendRequest extends StatelessWidget {
               ),
             ],
           ),
-          trailing: Text(
-            '4 day',
-            style: Theme.of(context).textTheme.titleMedium?.apply(
-                  color: Colors.grey.shade700,
-                  fontSizeFactor: .7,
-                ),
+          trailing: AutoSizeText(
+            '4d',
+            maxLines: 1,
+            style: Theme.of(context)
+                .textTheme
+                .titleSmall
+                ?.apply(color: Colors.grey.shade700, fontSizeFactor: .65),
           ),
         ),
       ),

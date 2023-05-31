@@ -34,21 +34,21 @@ class _mainNavigatorState extends State<mainNavigator> {
           color: Colors.black,
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 15.0,
-              vertical: 20.0,
+              horizontal: 8.0,
+              vertical: 18.0,
             ),
             child: GNav(
               backgroundColor: Colors.black,
               color: Colors.white,
               activeColor: Colors.white,
               tabBackgroundColor: Colors.grey.shade800,
-              gap: 8,
+              gap: 6,
               onTabChange: (index) {
                 setState(() {
                   _selectedIndex = index;
                 });
               },
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(13),
               tabs: const [
                 GButton(
                   icon: Icons.home,

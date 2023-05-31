@@ -42,7 +42,7 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
           ),
           child: Container(
             color: Colors.grey.shade200,
-            height: _mediaQuery.size.height * .28,
+            height: _mediaQuery.size.height * .32,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -60,60 +60,75 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
                   const SizedBox(
                     height: 10,
                   ),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.grey.shade200,
-                    ),
-                    onPressed: () {
-                      _pickImage(ImageSource.camera);
-                    },
-                    icon: const Icon(Icons.camera),
-                    label: const Text(
-                      "CAMERA",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
+                  SizedBox(
+                    height: _mediaQuery.size.height * .05,
+                    width: _mediaQuery.size.width * .02,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        foregroundColor: Colors.grey.shade200,
                       ),
-                    ),
-                  ),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.grey.shade200,
-                    ),
-                    onPressed: () {
-                      _pickImage(ImageSource.gallery);
-                    },
-                    icon: const Icon(Icons.image),
-                    label: const Text(
-                      "GALLERY",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
+                      onPressed: () {
+                        _pickImage(ImageSource.camera);
+                      },
+                      icon: const Icon(Icons.camera),
+                      label: const Text(
+                        "CAMERA",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Quicksand',
+                        ),
                       ),
                     ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 177, 22, 11),
-                      foregroundColor: Colors.grey.shade100,
+                  SizedBox(
+                    height: _mediaQuery.size.height * .05,
+                    width: _mediaQuery.size.width * .02,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        foregroundColor: Colors.grey.shade200,
+                      ),
+                      onPressed: () {
+                        _pickImage(ImageSource.gallery);
+                      },
+                      icon: const Icon(Icons.image),
+                      label: const Text(
+                        "GALLERY",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Quicksand',
+                        ),
+                      ),
                     ),
-                    onPressed: () {
-                      Get.back();
-                    },
-                    icon: const Icon(Icons.close),
-                    label: const Text(
-                      "CANCEL",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Quicksand',
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: _mediaQuery.size.height * .05,
+                    width: _mediaQuery.size.width * .02,
+                    child: ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 177, 22, 11),
+                        foregroundColor: Colors.grey.shade100,
+                      ),
+                      onPressed: () {
+                        Get.back();
+                      },
+                      icon: const Icon(Icons.close),
+                      label: const Text(
+                        "CANCEL",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Quicksand',
+                        ),
                       ),
                     ),
                   ),
@@ -180,13 +195,13 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
                       child: pickedImage != null
                           ? Image.file(
                               pickedImage!,
-                              width: _mediaQuery.size.width * .42,
+                              width: _mediaQuery.size.height * .2,
                               height: _mediaQuery.size.height * .2,
                               fit: BoxFit.cover,
                             )
                           : Image.asset(
                               'assets/images/man.png',
-                              width: _mediaQuery.size.width * .42,
+                              width: _mediaQuery.size.height * .2,
                               height: _mediaQuery.size.height * .2,
                               fit: BoxFit.cover,
                             ),
@@ -228,21 +243,25 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
               padding: const EdgeInsets.symmetric(
                 horizontal: 25,
               ),
-              child: ElevatedButton.icon(
-                style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 10,
-                    ),
-                    backgroundColor: Colors.black,
-                    foregroundColor: Colors.grey.shade200),
-                onPressed: _imagePickerOption,
-                icon: const Icon(Icons.add_a_photo_sharp),
-                label: Text(
-                  'UPLOAD IMAGE',
-                  style: Theme.of(context).textTheme.titleLarge?.apply(
-                        color: Colors.grey.shade200,
-                        fontSizeFactor: .7,
+              child: SizedBox(
+                height: _mediaQuery.size.height * .08,
+                width: _mediaQuery.size.width * .02,
+                child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10,
                       ),
+                      backgroundColor: Colors.black,
+                      foregroundColor: Colors.grey.shade200),
+                  onPressed: _imagePickerOption,
+                  icon: const Icon(Icons.add_a_photo_sharp),
+                  label: Text(
+                    'UPLOAD IMAGE',
+                    style: Theme.of(context).textTheme.titleLarge?.apply(
+                          color: Colors.grey.shade200,
+                          fontSizeFactor: .7,
+                        ),
+                  ),
                 ),
               ),
             ),
@@ -283,7 +302,9 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: ElevatedButton(
-                    onPressed: () => registerNow(context),
+                    onPressed: () {
+                      print(firstName.text + lastName.text);
+                    },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
                         horizontal: 40,

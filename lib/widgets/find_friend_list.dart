@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class findFriend extends StatelessWidget {
   const findFriend({super.key});
@@ -8,6 +9,7 @@ class findFriend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _mediaQuery = MediaQuery.of(context);
     return GestureDetector(
       onTap: () {
         profileView(context);
@@ -29,19 +31,23 @@ class findFriend extends StatelessWidget {
           ),
           title: Padding(
             padding: const EdgeInsets.only(bottom: 8),
-            child: Text(
+            child: AutoSizeText(
               'Tahmim Jawad',
+              maxLines: 1,
               style: Theme.of(context).textTheme.titleLarge?.apply(
                     fontSizeFactor: .8,
                   ),
             ),
           ),
           subtitle: SizedBox(
-            height: 40,
-            width: 120,
+            height: _mediaQuery.size.width * .08,
+            width: _mediaQuery.size.width * .24,
             child: ElevatedButton(
               onPressed: () {},
-              child: Text('Add Friend'),
+              child: AutoSizeText(
+                'Add Friend',
+                maxLines: 1,
+              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
               ),

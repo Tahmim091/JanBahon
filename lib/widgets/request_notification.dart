@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class requestNotification extends StatelessWidget {
@@ -5,6 +6,7 @@ class requestNotification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var _mediaQuery = MediaQuery.of(context);
     return Card(
       color: Colors.grey.shade200,
       elevation: 1,
@@ -22,27 +24,32 @@ class requestNotification extends StatelessWidget {
         ),
         title: Padding(
           padding: const EdgeInsets.only(bottom: 8),
-          child: Text(
+          child: AutoSizeText(
             'Tahmim Jawad',
+            maxLines: 1,
             style: Theme.of(context).textTheme.titleLarge?.apply(
                   fontSizeFactor: .8,
                 ),
           ),
         ),
-        subtitle: Text(
+        subtitle: AutoSizeText(
           'Requested to be friend',
+          maxLines: 2,
           style: Theme.of(context).textTheme.titleMedium?.apply(
-                fontSizeFactor: .8,
+                fontSizeFactor: .7,
               ),
         ),
         trailing: Column(
           children: [
             SizedBox(
-              height: 23,
-              width: 80,
+              height: _mediaQuery.size.width * .058,
+              width: _mediaQuery.size.width * .22,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Accept'),
+                child: AutoSizeText(
+                  'Accept',
+                  maxLines: 1,
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                 ),
@@ -52,11 +59,14 @@ class requestNotification extends StatelessWidget {
               height: 10,
             ),
             SizedBox(
-              height: 23,
-              width: 80,
+              height: _mediaQuery.size.width * .058,
+              width: _mediaQuery.size.width * .22,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text('Decline'),
+                child: AutoSizeText(
+                  'Reject',
+                  maxLines: 1,
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                 ),
