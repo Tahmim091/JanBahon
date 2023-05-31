@@ -1,6 +1,6 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 
 // ignore: camel_case_types
 class carCard extends StatefulWidget {
@@ -10,15 +10,13 @@ class carCard extends StatefulWidget {
   State<carCard> createState() => _carCardState();
 }
 
-// ignore: camel_case_types
 class _carCardState extends State<carCard> {
-  var value1 = false;
   @override
   Widget build(BuildContext context) {
-    var _mediaQuery = MediaQuery.of(context);
+    var value1 = false;
     return Container(
-      height: _mediaQuery.size.height * .13,
-      width: _mediaQuery.size.width * .22,
+      height: 200,
+      width: 200,
       child: Card(
         clipBehavior: Clip.antiAliasWithSaveLayer,
         shape: RoundedRectangleBorder(
@@ -29,8 +27,8 @@ class _carCardState extends State<carCard> {
         child: Column(
           children: [
             Container(
-              height: _mediaQuery.size.height * .13,
-              width: _mediaQuery.size.width * 1,
+              height: 106,
+              width: 200,
               child: Image.asset(
                 'assets/images/car.jpg',
                 fit: BoxFit.fill,
@@ -41,18 +39,16 @@ class _carCardState extends State<carCard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AutoSizeText(
+                  Text(
                     'Toyota Premio',
-                    maxLines: 1,
                     style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .2,
+                          fontSizeFactor: .7,
                         ),
                   ),
-                  AutoSizeText(
+                  Text(
                     'MX2104',
-                    maxLines: 1,
                     style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .2,
+                          fontSizeFactor: .7,
                         ),
                   ),
                 ],
@@ -63,16 +59,15 @@ class _carCardState extends State<carCard> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AutoSizeText(
-                    'Sevice Status: ',
-                    maxLines: 1,
+                  Text(
+                    'Service Status:',
                     style: Theme.of(context).textTheme.titleMedium?.apply(
-                          fontSizeFactor: .2,
+                          fontSizeFactor: .7,
                         ),
                   ),
                   SizedBox(
-                    height: _mediaQuery.size.height * .04,
-                    width: _mediaQuery.size.height * .06,
+                    height: 30.0,
+                    width: 60.0,
                     child: FittedBox(
                       fit: BoxFit.contain,
                       child: CupertinoSwitch(

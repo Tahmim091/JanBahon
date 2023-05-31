@@ -2,10 +2,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:janbahon_v2/widgets/menu_drawer.dart';
-import 'package:janbahon_v2/widgets/profile_add_car_Service.dart';
-import 'package:janbahon_v2/widgets/profile_car_card_widget.dart';
-import 'package:janbahon_v2/widgets/profile_friend_card_widget.dart';
+
+import 'widgets/menu_drawer.dart';
+import 'widgets/profile_add_car_Service.dart';
+import 'widgets/profile_car_card_widget.dart';
+import 'widgets/profile_friend_card_widget.dart';
 
 // ignore: camel_case_types
 class profilePageScreen extends StatefulWidget {
@@ -19,29 +20,13 @@ class profilePageScreen extends StatefulWidget {
 class _profilePageScreenState extends State<profilePageScreen> {
   GlobalKey<ScaffoldState> scaffolKey = GlobalKey<ScaffoldState>();
 
-  void friendList(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('friendList', arguments: {});
-  }
-
-  void editVehicle(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('editVehicle', arguments: {});
-  }
-
-  void addVehicle(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('addVehicle', arguments: {});
-  }
-
-  void profileView(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('profileView', arguments: {});
-  }
-
   @override
   Widget build(BuildContext context) {
-    var _mediaQuery = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         key: scaffolKey,
         backgroundColor: Colors.grey.shade200,
+        endDrawer: menuDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -64,8 +49,8 @@ class _profilePageScreenState extends State<profilePageScreen> {
                   borderRadius: BorderRadius.circular(800),
                   child: Image.asset(
                     'assets/images/Me.jpg',
-                    width: _mediaQuery.size.width * .38,
-                    height: _mediaQuery.size.width * .38,
+                    width: 150,
+                    height: 150,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -114,9 +99,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
                           ),
                     ),
                     TextButton.icon(
-                      onPressed: () {
-                        friendList(context);
-                      },
+                      onPressed: () {},
                       icon: const Icon(
                         Icons.list,
                         color: Colors.blue,
@@ -134,7 +117,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
               ),
               Center(
                 child: Container(
-                  height: _mediaQuery.size.height * .18,
+                  height: 150,
                   child: GridView.count(
                     scrollDirection: Axis.horizontal,
                     crossAxisCount: 1,
@@ -172,9 +155,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
                           ),
                     ),
                     TextButton.icon(
-                      onPressed: () {
-                        editVehicle(context);
-                      },
+                      onPressed: () {},
                       icon: const Icon(
                         Icons.edit,
                         color: Colors.blue,
@@ -192,22 +173,18 @@ class _profilePageScreenState extends State<profilePageScreen> {
               ),
               Center(
                 child: Container(
-                  height: _mediaQuery.size.width * 1.5,
+                  height: 600,
                   child: GridView.count(
                     shrinkWrap: true,
                     physics: ScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     crossAxisCount: 2,
-                    children: [
+                    children: const [
                       carCard(),
                       carCard(),
                       carCard(),
                       carCard(),
-                      GestureDetector(
-                          onTap: () {
-                            addVehicle(context);
-                          },
-                          child: addCarCard()),
+                      addCarCard(),
                     ],
                   ),
                 ),
@@ -227,7 +204,6 @@ class _profilePageScreenState extends State<profilePageScreen> {
             ],
           ),
         ),
-        endDrawer: menuDrawer(),
       ),
     );
   }

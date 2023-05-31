@@ -2,23 +2,18 @@ import 'package:flutter/material.dart';
 import './widgets/my_button.dart';
 import './widgets/squire_tile.dart';
 import './widgets/my_textfiled.dart';
+import 'navigator.dart';
+import 'registration_page_screen.dart';
 
 class LoginPageScreen extends StatelessWidget {
+  static const routeName = '/loginPage';
   LoginPageScreen({super.key});
   final userNameController = TextEditingController();
   final passwordController = TextEditingController();
 
-  void registerNow(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('rgistrationPage', arguments: {});
-  }
-
-  void logIn(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('nav', arguments: {});
-  }
-
   @override
   Widget build(BuildContext context) {
-    final _mediaQuery = MediaQuery.of(context);
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: SafeArea(
@@ -30,8 +25,8 @@ class LoginPageScreen extends StatelessWidget {
                 const SizedBox(height: 5),
                 Image.asset(
                   'assets/images/janbahonWhite.png',
-                  height: _mediaQuery.size.height * .24,
-                  width: _mediaQuery.size.width * .42,
+                  height: 180,
+                  width: 180,
                 ),
 
                 //login
@@ -68,7 +63,7 @@ class LoginPageScreen extends StatelessWidget {
                 const SizedBox(height: 25),
                 MyButton(
                   onTap: () {
-                    logIn(context);
+                    Navigator.pushNamed(context, MainNavigator.routeName);
                   },
                 ),
                 const SizedBox(height: 40),
@@ -108,7 +103,12 @@ class LoginPageScreen extends StatelessWidget {
 
                     //signup
                     GestureDetector(
-                      onTap: () => registerNow(context),
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          RegistrationPageScreen.routeName,
+                        );
+                      },
                       child: const Text(
                         'Sign Up',
                         style: TextStyle(
@@ -116,12 +116,10 @@ class LoginPageScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
-
+                    )
                     //signup end
                   ],
-                ),
-                const SizedBox(height: 30),
+                )
               ],
             ),
           ),

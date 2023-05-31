@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:janbahon_v2/profile_view_screen.dart';
-import 'add_vehicle.dart';
-import 'edit_profile_page.dart';
-import 'edit_vehicle.dart';
-import 'friend_list_page.dart';
-import 'navigator.dart';
-import './login_page_screen.dart';
-import './registration_page_screen.dart';
-import './splash_screen.dart';
+
+import 'view/edit_profile_page.dart';
+import 'view/login_page_screen.dart';
+import 'view/navigator.dart';
+import 'view/registration_page_screen.dart';
+import 'view/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,7 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Janbahon',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.teal,
         fontFamily: 'Quicksand',
         textTheme: ThemeData.light().textTheme.copyWith(
               titleSmall: const TextStyle(
@@ -43,17 +40,14 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      initialRoute: '/',
+      initialRoute: SplashScreen.routeName,
       routes: {
-        '/': (ctx) => const SplashScreen(),
-        'rgistrationPage': (ctx) => const RegistrationPageScreen(),
-        'loginpage': (ctx) => LoginPageScreen(),
-        'nav': (ctx) => const mainNavigator(),
-        'edit': (ctx) => const editProfilePage(),
-        'profileView': (ctx) => profileViewScreen(),
-        'friendList': (ctx) => const friendList(),
-        'editVehicle': (ctx) => const editVehicle(),
-        'addVehicle': (ctx) => const addVehicle(),
+        SplashScreen.routeName: (ctx) => const SplashScreen(),
+        RegistrationPageScreen.routeName: (ctx) =>
+            const RegistrationPageScreen(),
+        LoginPageScreen.routeName: (ctx) => LoginPageScreen(),
+        MainNavigator.routeName: (ctx) => const MainNavigator(),
+        EditProfilePage.routeName: (ctx) => const EditProfilePage(),
       },
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class menuDrawer extends StatelessWidget {
   const menuDrawer({super.key});
@@ -11,19 +12,9 @@ class menuDrawer extends StatelessWidget {
     Navigator.of(ctx).pushNamed('loginpage', arguments: {});
   }
 
-  void friendList(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('friendList', arguments: {});
-  }
-
-  void editVehicle(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('editVehicle', arguments: {});
-  }
-
   @override
   Widget build(BuildContext context) {
-    var _mediaQuery = MediaQuery.of(context);
     return Drawer(
-      width: _mediaQuery.size.width * .8,
       child: Container(
         color: Colors.grey.shade200,
         child: ListView(
@@ -94,9 +85,7 @@ class menuDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextButton.icon(
-                    onPressed: () {
-                      friendList(context);
-                    },
+                    onPressed: () {},
                     icon: const Icon(
                       Icons.people_alt,
                       color: Colors.black,
@@ -116,9 +105,7 @@ class menuDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextButton.icon(
-                    onPressed: () {
-                      editVehicle(context);
-                    },
+                    onPressed: () {},
                     icon: Image.asset(
                       "assets/images/carSettings.png",
                       height: 25,
