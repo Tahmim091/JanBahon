@@ -19,7 +19,9 @@ class _addVehicleState extends State<addVehicle> {
   final registrationNumber = TextEditingController();
 
   File? pickedImage;
+
   var _mediaQuery;
+
   void _imagePickerOption() {
     Get.bottomSheet(
       SingleChildScrollView(

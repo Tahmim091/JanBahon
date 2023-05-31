@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -14,8 +13,6 @@ class RegistrationPageScreen extends StatefulWidget {
 
 class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
   final firstName = TextEditingController();
-
-  final lastName = TextEditingController();
 
   final emailAddress = TextEditingController();
 
@@ -303,7 +300,8 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: ElevatedButton(
                     onPressed: () {
-                      print(firstName.text + lastName.text);
+                      print(firstName.text);
+                      registerNow(context);
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(
