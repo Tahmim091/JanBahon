@@ -43,17 +43,18 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      initialRoute: '/',
+      initialRoute: SplashScreen.routeName,
       routes: {
-        '/': (ctx) => const SplashScreen(),
-        'rgistrationPage': (ctx) => const RegistrationPageScreen(),
-        'loginpage': (ctx) => LoginPageScreen(),
-        'nav': (ctx) => const mainNavigator(),
-        'edit': (ctx) => const editProfilePage(),
-        'profileView': (ctx) => profileViewScreen(),
-        'friendList': (ctx) => const friendList(),
-        'editVehicle': (ctx) => const editVehicle(),
-        'addVehicle': (ctx) => const addVehicle(),
+        SplashScreen.routeName: (ctx) => const SplashScreen(),
+        RegistrationPageScreen.routeName: (ctx) =>
+            const RegistrationPageScreen(),
+        LoginPageScreen.routeName: (ctx) => LoginPageScreen(),
+        MainNavigator.routeName: (ctx) => const MainNavigator(),
+        EditProfilePage.routeName: (ctx) => const EditProfilePage(),
+        ProfileViewScreen.routeName: (ctx) => const ProfileViewScreen(),
+        FriendListScreen.routeName: (ctx) => const FriendListScreen(),
+        EditVehicleScreen.routeName: (ctx) => const EditVehicleScreen(),
+        AddVehicleScreen.routeName: (ctx) => const AddVehicleScreen(),
       },
     );
   }

@@ -2,6 +2,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:janbahon_v2/add_vehicle.dart';
+import 'package:janbahon_v2/edit_vehicle.dart';
+import 'package:janbahon_v2/friend_list_page.dart';
 import 'package:janbahon_v2/widgets/menu_drawer.dart';
 import 'package:janbahon_v2/widgets/profile_add_car_Service.dart';
 import 'package:janbahon_v2/widgets/profile_car_card_widget.dart';
@@ -18,22 +21,6 @@ class profilePageScreen extends StatefulWidget {
 // ignore: camel_case_types
 class _profilePageScreenState extends State<profilePageScreen> {
   GlobalKey<ScaffoldState> scaffolKey = GlobalKey<ScaffoldState>();
-
-  void friendList(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('friendList', arguments: {});
-  }
-
-  void editVehicle(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('editVehicle', arguments: {});
-  }
-
-  void addVehicle(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('addVehicle', arguments: {});
-  }
-
-  void profileView(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('profileView', arguments: {});
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +102,10 @@ class _profilePageScreenState extends State<profilePageScreen> {
                     ),
                     TextButton.icon(
                       onPressed: () {
-                        friendList(context);
+                        Navigator.pushNamed(
+                          context,
+                          FriendListScreen.routeName,
+                        );
                       },
                       icon: const Icon(
                         Icons.list,
@@ -173,7 +163,10 @@ class _profilePageScreenState extends State<profilePageScreen> {
                     ),
                     TextButton.icon(
                       onPressed: () {
-                        editVehicle(context);
+                        Navigator.pushNamed(
+                          context,
+                          EditVehicleScreen.routeName,
+                        );
                       },
                       icon: const Icon(
                         Icons.edit,
@@ -199,13 +192,16 @@ class _profilePageScreenState extends State<profilePageScreen> {
                     scrollDirection: Axis.vertical,
                     crossAxisCount: 2,
                     children: [
-                      carCard(),
-                      carCard(),
-                      carCard(),
-                      carCard(),
+                      ProfileCarCard(),
+                      ProfileCarCard(),
+                      ProfileCarCard(),
+                      ProfileCarCard(),
                       GestureDetector(
                           onTap: () {
-                            addVehicle(context);
+                            Navigator.pushNamed(
+                              context,
+                              AddVehicleScreen.routeName,
+                            );
                           },
                           child: addCarCard()),
                     ],

@@ -7,15 +7,16 @@ import './friends_page_screen.dart';
 import './notification_page_screen.dart';
 
 // ignore: camel_case_types
-class mainNavigator extends StatefulWidget {
-  const mainNavigator({super.key});
+class MainNavigator extends StatefulWidget {
+  static const routeName = '/mainNavigator';
+  const MainNavigator({super.key});
 
   @override
-  State<mainNavigator> createState() => _mainNavigatorState();
+  State<MainNavigator> createState() => _MainNavigatorState();
 }
 
 // ignore: camel_case_types
-class _mainNavigatorState extends State<mainNavigator> {
+class _MainNavigatorState extends State<MainNavigator> {
   int _selectedIndex = 0;
   // ignore: prefer_final_fields
   List<Widget> _screens = [

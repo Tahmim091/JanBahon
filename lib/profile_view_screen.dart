@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:janbahon_v2/widgets/profile_car_card_widget.dart';
+import 'package:janbahon_v2/widgets/profile_view_car_card.dart';
 
 // ignore: camel_case_types
-class profileViewScreen extends StatefulWidget {
-  const profileViewScreen({super.key});
+class ProfileViewScreen extends StatefulWidget {
+  static const routeName = '/profileViewPage';
+  const ProfileViewScreen({super.key});
 
   @override
-  State<profileViewScreen> createState() => _profileViewScreenState();
+  State<ProfileViewScreen> createState() => _ProfileViewScreenState();
 }
 
 // ignore: camel_case_types
-class _profileViewScreenState extends State<profileViewScreen> {
+class _ProfileViewScreenState extends State<ProfileViewScreen> {
   GlobalKey<ScaffoldState> scaffolKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
-    var _mediaQuery = MediaQuery.of(context);
+    var mediaQuery = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         key: scaffolKey,
@@ -37,8 +38,8 @@ class _profileViewScreenState extends State<profileViewScreen> {
                   borderRadius: BorderRadius.circular(800),
                   child: Image.asset(
                     'assets/images/Me.jpg',
-                    width: _mediaQuery.size.width * .38,
-                    height: _mediaQuery.size.width * .38,
+                    width: mediaQuery.size.width * .38,
+                    height: mediaQuery.size.width * .38,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -133,36 +134,22 @@ class _profileViewScreenState extends State<profileViewScreen> {
                             color: Colors.grey.shade800,
                           ),
                     ),
-                    TextButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.edit,
-                        color: Colors.blue,
-                      ),
-                      label: Text(
-                        'Edit',
-                        style: Theme.of(context).textTheme.titleMedium?.apply(
-                              fontSizeFactor: .8,
-                              color: Colors.blue,
-                            ),
-                      ),
-                    ),
                   ],
                 ),
               ),
               Center(
                 child: Container(
-                  height: _mediaQuery.size.height * .5,
+                  height: mediaQuery.size.height * .5,
                   child: GridView.count(
                     shrinkWrap: true,
                     physics: const ScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     crossAxisCount: 2,
                     children: const [
-                      carCard(),
-                      carCard(),
-                      carCard(),
-                      carCard(),
+                      ProfileViewCarCard(),
+                      ProfileViewCarCard(),
+                      ProfileViewCarCard(),
+                      ProfileViewCarCard(),
                     ],
                   ),
                 ),
