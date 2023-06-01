@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:janbahon_v2/profile_view_screen.dart';
-import 'add_vehicle.dart';
-import 'edit_profile_page.dart';
-import 'edit_vehicle.dart';
-import 'friend_list_page.dart';
-import 'navigator.dart';
-import './login_page_screen.dart';
-import './registration_page_screen.dart';
-import './splash_screen.dart';
+import './view/profile_view_screen.dart';
+import './view/add_vehicle.dart';
+import './view/edit_profile_page.dart';
+import './view/edit_vehicle.dart';
+import './view/friend_list_page.dart';
+import './view/navigator.dart';
+import './view/login_page_screen.dart';
+import './view/registration_page_screen.dart';
+import './view/splash_screen.dart';
 
 void main() {
   runApp(MyApp());

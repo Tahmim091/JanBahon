@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:janbahon_v2/widgets/edit_car_card.dart';
-import 'package:janbahon_v2/widgets/profile_car_card_widget.dart';
+import './widgets/edit_car_card.dart';
+import './widgets/profile_car_card_widget.dart';
 
 import 'add_vehicle.dart';
 

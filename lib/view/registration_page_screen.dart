@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:janbahon_v2/login_page_screen.dart';
+import './login_page_screen.dart';
 import './widgets/signup_textfiled.dart';
 
 class RegistrationPageScreen extends StatefulWidget {

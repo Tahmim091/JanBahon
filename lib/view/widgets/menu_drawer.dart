@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:janbahon_v2/edit_profile_page.dart';
-import 'package:janbahon_v2/login_page_screen.dart';
+import '../edit_profile_page.dart';
+import '../login_page_screen.dart';
 
 import '../edit_vehicle.dart';
 import '../friend_list_page.dart';

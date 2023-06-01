@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:janbahon_v2/profile_view_screen.dart';
+import './profile_view_screen.dart';
 import './widgets/find_friend_list.dart';
 import './widgets/friend_request_list.dart';
 
