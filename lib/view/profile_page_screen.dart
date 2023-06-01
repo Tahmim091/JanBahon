@@ -2,13 +2,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:janbahon_v2/add_vehicle.dart';
-import 'package:janbahon_v2/edit_vehicle.dart';
-import 'package:janbahon_v2/friend_list_page.dart';
-import 'package:janbahon_v2/widgets/menu_drawer.dart';
-import 'package:janbahon_v2/widgets/profile_add_car_Service.dart';
-import 'package:janbahon_v2/widgets/profile_car_card_widget.dart';
-import 'package:janbahon_v2/widgets/profile_friend_card_widget.dart';
+import './add_vehicle.dart';
+import './edit_vehicle.dart';
+import './friend_list_page.dart';
+import './widgets/menu_drawer.dart';
+import './widgets/profile_add_car_Service.dart';
+import './widgets/profile_car_card_widget.dart';
+import './widgets/profile_friend_card_widget.dart';
 
 // ignore: camel_case_types
 class profilePageScreen extends StatefulWidget {

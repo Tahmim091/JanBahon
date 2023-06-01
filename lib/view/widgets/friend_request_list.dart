@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:janbahon_v2/profile_view_screen.dart';
+import '../profile_view_screen.dart';
 
 // ignore: camel_case_types
 class friendRequest extends StatelessWidget {

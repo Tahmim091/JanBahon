@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:janbahon_v2/registration_page_screen.dart';
+import './registration_page_screen.dart';
 import './widgets/my_button.dart';
 import './widgets/squire_tile.dart';
 import './widgets/my_textfiled.dart';

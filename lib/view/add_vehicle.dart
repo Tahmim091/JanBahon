@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:janbahon_v2/widgets/vehicle_textfiled.dart';
+import './widgets/vehicle_textfiled.dart';
 
 class AddVehicleScreen extends StatefulWidget {
   static const routeName = '/addVehicleScreen';

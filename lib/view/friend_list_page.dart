@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:janbahon_v2/widgets/friends.dart';
+import './widgets/friends.dart';
 
 class FriendListScreen extends StatelessWidget {
   static const routeName = '/friendListScreen';

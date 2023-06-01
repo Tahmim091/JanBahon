@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:janbahon_v2/profile_page_screen.dart';
+import './profile_page_screen.dart';
 
 import './home_page_screen.dart';
 import './friends_page_screen.dart';

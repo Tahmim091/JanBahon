@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:janbahon_v2/widgets/profile_view_car_card.dart';
+import './widgets/profile_view_car_card.dart';
 
 // ignore: camel_case_types
 class ProfileViewScreen extends StatefulWidget {
