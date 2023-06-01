@@ -3,15 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class carCard extends StatefulWidget {
-  const carCard({super.key});
+class ProfileCarCard extends StatefulWidget {
+  const ProfileCarCard({super.key});
 
   @override
-  State<carCard> createState() => _carCardState();
+  State<ProfileCarCard> createState() => _ProfileCarCardState();
 }
 
 // ignore: camel_case_types
-class _carCardState extends State<carCard> {
+class _ProfileCarCardState extends State<ProfileCarCard> {
   var value1 = false;
   @override
   Widget build(BuildContext context) {

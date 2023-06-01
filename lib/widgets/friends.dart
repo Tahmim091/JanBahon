@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../profile_view_screen.dart';
+
 class friend extends StatelessWidget {
   const friend({
     super.key,
   });
 
-  void profileView(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('profileView', arguments: {});
-  }
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        profileView(context);
+        Navigator.pushNamed(
+          context,
+          ProfileViewScreen.routeName,
+        );
       },
       child: Card(
         color: Colors.grey.shade200,

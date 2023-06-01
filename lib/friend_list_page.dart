@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:janbahon_v2/widgets/friends.dart';
 
-class friendList extends StatelessWidget {
-  const friendList({super.key});
+class FriendListScreen extends StatelessWidget {
+  static const routeName = '/friendListScreen';
+  const FriendListScreen({super.key});
 
   void profileView(BuildContext ctx) {
     Navigator.of(ctx).pushNamed('profileView', arguments: {});

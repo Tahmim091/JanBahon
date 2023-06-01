@@ -4,14 +4,15 @@ import 'dart:io';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-class editProfilePage extends StatefulWidget {
-  const editProfilePage({super.key});
+class EditProfilePage extends StatefulWidget {
+  static const routeName = '/editProfilePage';
+  const EditProfilePage({super.key});
 
   @override
-  State<editProfilePage> createState() => _editProfilePageState();
+  State<EditProfilePage> createState() => _EditProfilePageState();
 }
 
-class _editProfilePageState extends State<editProfilePage> {
+class _EditProfilePageState extends State<EditProfilePage> {
   File? pickedImage;
   var _mediaQuery;
   void _change() {

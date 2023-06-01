@@ -2,9 +2,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:janbahon_v2/login_page_screen.dart';
 import './widgets/signup_textfiled.dart';
 
 class RegistrationPageScreen extends StatefulWidget {
+  static const routeName = '/registrationPage';
   const RegistrationPageScreen({super.key});
 
   @override
@@ -24,10 +26,7 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
 
   File? pickedImage;
 
-  void registerNow(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('loginpage', arguments: {});
-  }
-
+  // ignore: prefer_typing_uninitialized_variables
   var _mediaQuery;
   void _imagePickerOption() {
     Get.bottomSheet(
@@ -300,8 +299,10 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: ElevatedButton(
                     onPressed: () {
-                      print(firstName.text);
-                      registerNow(context);
+                      Navigator.pushNamed(
+                        context,
+                        LoginPageScreen.routeName,
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.symmetric(

@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+import '../profile_view_screen.dart';
+
+// ignore: camel_case_types
 class findFriend extends StatelessWidget {
   const findFriend({super.key});
-  void profileView(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('profileView', arguments: {});
-  }
 
   @override
   Widget build(BuildContext context) {
-    var _mediaQuery = MediaQuery.of(context);
+    var mediaQuery = MediaQuery.of(context);
     return GestureDetector(
       onTap: () {
-        profileView(context);
+        Navigator.pushNamed(
+          context,
+          ProfileViewScreen.routeName,
+        );
       },
       child: Card(
         color: Colors.grey.shade200,
@@ -40,16 +43,16 @@ class findFriend extends StatelessWidget {
             ),
           ),
           subtitle: SizedBox(
-            height: _mediaQuery.size.width * .08,
-            width: _mediaQuery.size.width * .24,
+            height: mediaQuery.size.width * .08,
+            width: mediaQuery.size.width * .24,
             child: ElevatedButton(
               onPressed: () {},
-              child: AutoSizeText(
-                'Add Friend',
-                maxLines: 1,
-              ),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black,
+              ),
+              child: const AutoSizeText(
+                'Add Friend',
+                maxLines: 1,
               ),
             ),
           ),

@@ -4,14 +4,15 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:janbahon_v2/widgets/vehicle_textfiled.dart';
 
-class addVehicle extends StatefulWidget {
-  const addVehicle({super.key});
+class AddVehicleScreen extends StatefulWidget {
+  static const routeName = '/addVehicleScreen';
+  const AddVehicleScreen({super.key});
 
   @override
-  State<addVehicle> createState() => _addVehicleState();
+  State<AddVehicleScreen> createState() => _AddVehicleScreenState();
 }
 
-class _addVehicleState extends State<addVehicle> {
+class _AddVehicleScreenState extends State<AddVehicleScreen> {
   final brandName = TextEditingController();
 
   final model = TextEditingController();
@@ -20,6 +21,7 @@ class _addVehicleState extends State<addVehicle> {
 
   File? pickedImage;
 
+  // ignore: prefer_typing_uninitialized_variables
   var _mediaQuery;
 
   void _imagePickerOption() {

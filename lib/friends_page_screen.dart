@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:janbahon_v2/profile_view_screen.dart';
 import './widgets/find_friend_list.dart';
 import './widgets/friend_request_list.dart';
 
@@ -7,7 +8,7 @@ class friendListScreen extends StatelessWidget {
   const friendListScreen({super.key});
 
   void profileView(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('profileView', arguments: {});
+    Navigator.of(ctx).pushNamed(ProfileViewScreen.routeName, arguments: {});
   }
 
   @override
@@ -72,12 +73,7 @@ class friendListScreen extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            GestureDetector(
-              child: friendRequest(),
-              onTap: () {
-                profileView;
-              },
-            ),
+            friendRequest(),
             const findFriend(),
           ]),
         ),

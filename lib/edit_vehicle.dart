@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:janbahon_v2/widgets/edit_car_card.dart';
 import 'package:janbahon_v2/widgets/profile_car_card_widget.dart';
 
+import 'add_vehicle.dart';
+
 // ignore: camel_case_types
-class editVehicle extends StatelessWidget {
-  const editVehicle({super.key});
+class EditVehicleScreen extends StatelessWidget {
+  static const routeName = '/editVehicleScreen';
+  const EditVehicleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    void addVehicle(BuildContext ctx) {
-      Navigator.of(ctx).pushNamed('addVehicle', arguments: {});
-    }
-
     var _mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
@@ -51,7 +50,10 @@ class editVehicle extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 15, top: 4),
         child: FloatingActionButton(
           onPressed: () {
-            addVehicle(context);
+            Navigator.pushNamed(
+              context,
+              AddVehicleScreen.routeName,
+            );
           },
           backgroundColor: Colors.black,
           child: const Icon(
