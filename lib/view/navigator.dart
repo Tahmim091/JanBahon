@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import './profile_page_screen.dart';
 
 import './home_page_screen.dart';
 import './friends_page_screen.dart';
 import './notification_page_screen.dart';
-import 'profile_page_screen.dart';
 
 // ignore: camel_case_types
 class MainNavigator extends StatefulWidget {
@@ -20,7 +20,7 @@ class _MainNavigatorState extends State<MainNavigator> {
   int _selectedIndex = 0;
   // ignore: prefer_final_fields
   List<Widget> _screens = [
-    const HomePage(),
+    const homePageScreen(),
     const friendListScreen(),
     const notificationListScreen(),
     const profilePageScreen(),
@@ -35,21 +35,21 @@ class _MainNavigatorState extends State<MainNavigator> {
           color: Colors.black,
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 15.0,
-              vertical: 20.0,
+              horizontal: 8.0,
+              vertical: 18.0,
             ),
             child: GNav(
               backgroundColor: Colors.black,
               color: Colors.white,
               activeColor: Colors.white,
               tabBackgroundColor: Colors.grey.shade800,
-              gap: 8,
+              gap: 6,
               onTabChange: (index) {
                 setState(() {
                   _selectedIndex = index;
                 });
               },
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(13),
               tabs: const [
                 GButton(
                   icon: Icons.home,

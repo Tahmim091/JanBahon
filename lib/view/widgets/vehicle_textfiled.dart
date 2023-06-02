@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class SignUpTextFiled extends StatelessWidget {
+class VehicleTextFiled extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   final controller;
   final String hintText;
   final bool obscureText;
 
-  const SignUpTextFiled({
+  const VehicleTextFiled({
     super.key,
     required this.controller,
     required this.hintText,

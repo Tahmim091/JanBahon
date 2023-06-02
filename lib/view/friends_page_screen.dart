@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import './profile_view_screen.dart';
 import './widgets/find_friend_list.dart';
 import './widgets/friend_request_list.dart';
 
 // ignore: camel_case_types
 class friendListScreen extends StatelessWidget {
   const friendListScreen({super.key});
+
+  void profileView(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(ProfileViewScreen.routeName, arguments: {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +74,7 @@ class friendListScreen extends StatelessWidget {
               height: 10,
             ),
             friendRequest(),
-            findFriend(),
+            const findFriend(),
           ]),
         ),
       ),

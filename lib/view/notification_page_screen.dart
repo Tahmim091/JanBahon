@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'widgets/notice_notification.dart';
-import 'widgets/request_notification.dart';
+import './widgets/notice_notification.dart';
+import './widgets/request_notification.dart';
 
 // ignore: camel_case_types
 class notificationListScreen extends StatelessWidget {

@@ -2,11 +2,13 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-
-import 'widgets/menu_drawer.dart';
-import 'widgets/profile_add_car_Service.dart';
-import 'widgets/profile_car_card_widget.dart';
-import 'widgets/profile_friend_card_widget.dart';
+import './add_vehicle.dart';
+import './edit_vehicle.dart';
+import './friend_list_page.dart';
+import './widgets/menu_drawer.dart';
+import './widgets/profile_add_car_Service.dart';
+import './widgets/profile_car_card_widget.dart';
+import './widgets/profile_friend_card_widget.dart';
 
 // ignore: camel_case_types
 class profilePageScreen extends StatefulWidget {
@@ -22,11 +24,11 @@ class _profilePageScreenState extends State<profilePageScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var _mediaQuery = MediaQuery.of(context);
     return SafeArea(
       child: Scaffold(
         key: scaffolKey,
         backgroundColor: Colors.grey.shade200,
-        endDrawer: menuDrawer(),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -49,8 +51,8 @@ class _profilePageScreenState extends State<profilePageScreen> {
                   borderRadius: BorderRadius.circular(800),
                   child: Image.asset(
                     'assets/images/Me.jpg',
-                    width: 150,
-                    height: 150,
+                    width: _mediaQuery.size.width * .38,
+                    height: _mediaQuery.size.width * .38,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -99,7 +101,12 @@ class _profilePageScreenState extends State<profilePageScreen> {
                           ),
                     ),
                     TextButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          FriendListScreen.routeName,
+                        );
+                      },
                       icon: const Icon(
                         Icons.list,
                         color: Colors.blue,
@@ -117,7 +124,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
               ),
               Center(
                 child: Container(
-                  height: 150,
+                  height: _mediaQuery.size.height * .18,
                   child: GridView.count(
                     scrollDirection: Axis.horizontal,
                     crossAxisCount: 1,
@@ -155,7 +162,12 @@ class _profilePageScreenState extends State<profilePageScreen> {
                           ),
                     ),
                     TextButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          EditVehicleScreen.routeName,
+                        );
+                      },
                       icon: const Icon(
                         Icons.edit,
                         color: Colors.blue,
@@ -173,18 +185,25 @@ class _profilePageScreenState extends State<profilePageScreen> {
               ),
               Center(
                 child: Container(
-                  height: 600,
+                  height: _mediaQuery.size.width * 1.5,
                   child: GridView.count(
                     shrinkWrap: true,
                     physics: ScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     crossAxisCount: 2,
-                    children: const [
-                      carCard(),
-                      carCard(),
-                      carCard(),
-                      carCard(),
-                      addCarCard(),
+                    children: [
+                      ProfileCarCard(),
+                      ProfileCarCard(),
+                      ProfileCarCard(),
+                      ProfileCarCard(),
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              AddVehicleScreen.routeName,
+                            );
+                          },
+                          child: addCarCard()),
                     ],
                   ),
                 ),
@@ -204,6 +223,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
             ],
           ),
         ),
+        endDrawer: menuDrawer(),
       ),
     );
   }

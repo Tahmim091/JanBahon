@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import './registration_page_screen.dart';
 import './widgets/my_button.dart';
 import './widgets/squire_tile.dart';
 import './widgets/my_textfiled.dart';
 import 'navigator.dart';
-import 'registration_page_screen.dart';
 
 class LoginPageScreen extends StatelessWidget {
   static const routeName = '/loginPage';
@@ -13,7 +13,7 @@ class LoginPageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final mediaQuery = MediaQuery.of(context);
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: SafeArea(
@@ -25,8 +25,8 @@ class LoginPageScreen extends StatelessWidget {
                 const SizedBox(height: 5),
                 Image.asset(
                   'assets/images/janbahonWhite.png',
-                  height: 180,
-                  width: 180,
+                  height: mediaQuery.size.height * .24,
+                  width: mediaQuery.size.width * .42,
                 ),
 
                 //login
@@ -116,10 +116,12 @@ class LoginPageScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    )
+                    ),
+
                     //signup end
                   ],
-                )
+                ),
+                const SizedBox(height: 30),
               ],
             ),
           ),

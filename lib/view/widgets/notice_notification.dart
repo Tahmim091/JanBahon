@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 class noticeNotification extends StatelessWidget {
@@ -22,17 +23,19 @@ class noticeNotification extends StatelessWidget {
         ),
         title: Padding(
           padding: const EdgeInsets.only(bottom: 8),
-          child: Text(
+          child: AutoSizeText(
             'Tahmim Jawad',
+            maxLines: 1,
             style: Theme.of(context).textTheme.titleLarge?.apply(
                   fontSizeFactor: .8,
                 ),
           ),
         ),
-        subtitle: Text(
-          'Accepted your frind request',
+        subtitle: AutoSizeText(
+          'Accepted your friend request',
+          maxLines: 1,
           style: Theme.of(context).textTheme.titleMedium?.apply(
-                fontSizeFactor: .8,
+                fontSizeFactor: .7,
               ),
         ),
       ),

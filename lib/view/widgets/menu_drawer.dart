@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import '../edit_profile_page.dart';
+import '../login_page_screen.dart';
+
+import '../edit_vehicle.dart';
+import '../friend_list_page.dart';
 
 class menuDrawer extends StatelessWidget {
   const menuDrawer({super.key});
 
-  void editProfile(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('edit', arguments: {});
-  }
-
-  void logOut(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('loginpage', arguments: {});
-  }
-
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context);
     return Drawer(
+      width: mediaQuery.size.width * .8,
       child: Container(
         color: Colors.grey.shade200,
         child: ListView(
@@ -64,7 +62,10 @@ class menuDrawer extends StatelessWidget {
                 children: [
                   TextButton.icon(
                     onPressed: () {
-                      editProfile(context);
+                      Navigator.pushNamed(
+                        context,
+                        EditProfilePage.routeName,
+                      );
                     },
                     icon: const Icon(
                       Icons.edit,
@@ -85,7 +86,12 @@ class menuDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        FriendListScreen.routeName,
+                      );
+                    },
                     icon: const Icon(
                       Icons.people_alt,
                       color: Colors.black,
@@ -105,7 +111,12 @@ class menuDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        EditVehicleScreen.routeName,
+                      );
+                    },
                     icon: Image.asset(
                       "assets/images/carSettings.png",
                       height: 25,
@@ -146,7 +157,10 @@ class menuDrawer extends StatelessWidget {
                 children: [
                   TextButton.icon(
                     onPressed: () {
-                      logOut(context);
+                      Navigator.pushNamed(
+                        context,
+                        LoginPageScreen.routeName,
+                      );
                     },
                     icon: Icon(
                       Icons.logout,
