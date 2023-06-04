@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^0.8.7+1
+  image_picker:
   get: ^4.3.8
   avatar_view: ^1.0.1
   auto_size_text: ^3.0.0
@@ -45,6 +45,9 @@ dependencies:
   flutter_datetime_picker: ^1.5.1
   google_nav_bar: ^5.0.6
   getwidget: ^3.1.1
+  provider: ^6.0.5
+  http:
+  flutter_easyloading:
 
 dev_dependencies:
   flutter_test:

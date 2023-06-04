@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:janbahon_v2/controller/utils/constant.dart';
 import './login_page_screen.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -10,7 +11,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mediaQuery = MediaQuery.of(context);
+    mediaHeight = MediaQuery.of(context).size.height;
+    mediaWidth = MediaQuery.of(context).size.width;
     return AnimatedSplashScreen(
       splash: Center(
         child: SizedBox(
@@ -21,7 +23,7 @@ class SplashScreen extends StatelessWidget {
       ),
       backgroundColor: Colors.black,
       nextScreen: LoginPageScreen(),
-      splashIconSize: mediaQuery.size.height * 0.3,
+      splashIconSize: mediaHeight * 0.3,
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.bottomToTop,
       animationDuration: const Duration(seconds: 2),

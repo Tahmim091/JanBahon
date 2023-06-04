@@ -24,10 +24,11 @@ class SignUpTextFiled extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
-            hintText: hintText,
-            hintStyle: TextStyle(
-              color: Colors.grey.shade500,
-            )),
+          hintText: hintText,
+          hintStyle: TextStyle(
+            color: Colors.grey.shade500,
+          ),
+        ),
       ),
     );
   }

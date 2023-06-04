@@ -22,16 +22,17 @@ class MyTextFiled extends StatelessWidget {
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
-            enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey.shade400),
-            ),
-            filled: true,
-            fillColor: Colors.grey.shade100,
-            hintText: hintText,
-            hintStyle: TextStyle(color: Colors.grey.shade500)),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.white),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey.shade400),
+          ),
+          filled: true,
+          fillColor: Colors.grey.shade100,
+          hintText: hintText,
+          hintStyle: TextStyle(color: Colors.grey.shade500),
+        ),
       ),
     );
   }

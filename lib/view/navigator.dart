@@ -20,7 +20,7 @@ class _MainNavigatorState extends State<MainNavigator> {
   int _selectedIndex = 0;
   // ignore: prefer_final_fields
   List<Widget> _screens = [
-    const homePageScreen(),
+    const HomePage(),
     const friendListScreen(),
     const notificationListScreen(),
     const profilePageScreen(),

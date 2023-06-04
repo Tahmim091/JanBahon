@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class homePageScreen extends StatelessWidget {
-  const homePageScreen({super.key});
+class HomePage extends StatelessWidget {
+  static const routeName = '/homePage';
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {

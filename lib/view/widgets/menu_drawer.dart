@@ -157,9 +157,10 @@ class menuDrawer extends StatelessWidget {
                 children: [
                   TextButton.icon(
                     onPressed: () {
-                      Navigator.pushNamed(
+                      Navigator.pushNamedAndRemoveUntil(
                         context,
                         LoginPageScreen.routeName,
+                        (Route<dynamic> route) => false,
                       );
                     },
                     icon: Icon(
