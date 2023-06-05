@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import 'package:janbahon_v2/controller/utils/constant.dart';
@@ -63,19 +65,26 @@ class _profilePageScreenState extends State<profilePageScreen> {
               Center(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(800),
-                  child: Image.asset(
-                    'assets/images/Me.jpg',
-                    width: mediaQuery.size.width * .38,
-                    height: mediaQuery.size.width * .38,
-                    fit: BoxFit.cover,
-                  ),
+                  child: userProvider.currentUser!.image != null
+                      ? Image.memory(
+                          base64.decode(userProvider.currentUser!.image),
+                          width: mediaQuery.size.width * .38,
+                          height: mediaQuery.size.width * .38,
+                          fit: BoxFit.cover,
+                        )
+                      : Image.asset(
+                          'assets/images/Man.jpg',
+                          width: mediaQuery.size.width * .38,
+                          height: mediaQuery.size.width * .38,
+                          fit: BoxFit.cover,
+                        ),
                 ),
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                'Tahmim Jawad',
+                userProvider.currentUser!.username,
                 style: Theme.of(context).textTheme.titleLarge?.apply(
                       fontSizeFactor: .9,
                     ),
@@ -84,7 +93,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
                 height: 4,
               ),
               Text(
-                'tahamimjawad@gmail.com',
+                userProvider.currentUser!.email,
                 style: Theme.of(context).textTheme.titleMedium?.apply(
                       fontSizeFactor: .7,
                       color: Colors.grey.shade700,
@@ -252,18 +261,25 @@ class _profilePageScreenState extends State<profilePageScreen> {
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadius.circular(800),
-                        child: Image.asset(
-                          'assets/images/Me.jpg',
-                          width: 70,
-                          height: 70,
-                          fit: BoxFit.cover,
-                        ),
+                        child: userProvider.currentUser!.image != null
+                            ? Image.memory(
+                                base64.decode(userProvider.currentUser!.image),
+                                width: 70,
+                                height: 70,
+                                fit: BoxFit.cover,
+                              )
+                            : Image.asset(
+                                'assets/images/Man.jpg',
+                                width: 70,
+                                height: 70,
+                                fit: BoxFit.cover,
+                              ),
                       ),
                       const SizedBox(
                         height: 10,
                       ),
                       Text(
-                        'Tahmim Jawad',
+                        userProvider.currentUser!.username,
                         style: Theme.of(context).textTheme.titleLarge?.apply(
                               fontSizeFactor: .8,
                               color: Colors.white,
@@ -273,7 +289,7 @@ class _profilePageScreenState extends State<profilePageScreen> {
                         height: 4,
                       ),
                       Text(
-                        'tahamimjawad@gmail.com',
+                        userProvider.currentUser!.email,
                         style: Theme.of(context).textTheme.titleMedium?.apply(
                               fontSizeFactor: .7,
                               color: Colors.grey.shade500,

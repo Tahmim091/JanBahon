@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -390,10 +392,14 @@ class _RegistrationPageScreenState extends State<RegistrationPageScreen> {
   void _signUpAuth() async {
     if (_formKey.currentState!.validate()) {
       EasyLoading.show(status: 'Please wait', dismissOnTap: false);
+      Uint8List imagebytes =
+          await pickedImage!.readAsBytes(); //convert to bytes
+      String base64string = base64.encode(imagebytes);
       try {
         userProvider.signupUser = User(
           username: firstName.text,
           password: accountPassword.text,
+          image: base64string,
           email: emailAddress.text,
           phone: phoneNumber.text,
         );
